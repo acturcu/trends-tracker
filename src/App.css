@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  background-color: #282c34;
 }
 
 .App-logo {
@@ -26,6 +27,46 @@
 
 .App-link {
   color: #61dafb;
+}
+
+.title {
+  color: #1DB954;
+  top:0;
+  font-size: 66px;
+}
+
+.logout-button {
+  position: absolute;
+  top: 1%;
+  right: 1%;
+  border: none;
+  color: #1DB954;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 20px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+.login-button {
+  position: absolute;
+  top: 1%;
+  right: 1%;
+  border: none;
+  color: #1DB954;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 20px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+.profile {
+  position: absolute;
+  top:2%;
+  left: 1%;
 }
 
 @keyframes App-logo-spin {
