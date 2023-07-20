@@ -6,11 +6,9 @@ function TopType({ timeRange, type, token }) {
     const [tracks, setTracks] = useState([]);
 
     useEffect(() => {
-        console.log("token", token);
-        console.log("period", timeRange);
         const getTopTracks = async () => {
 
-            const { data } = await axios.get(`https://api.spotify.com/v1/me/top/${type}?time_range=${timeRange}`,
+            const { data } = await axios.get(`https://api.spotify.com/v1/me/top/${type}?time_range=${timeRange}&limit=48`,
                 {
                     headers: {
                         Authorization: `Bearer ${token}`
@@ -24,7 +22,7 @@ function TopType({ timeRange, type, token }) {
         return () => {
             setTracks([]);
         }
-    }, [timeRange, token]);
+    }, [timeRange, type, token]);
 
     const gridStyle = {
         display: "grid",
@@ -42,6 +40,8 @@ function TopType({ timeRange, type, token }) {
     const imageStyle = {
         maxWidth: "200px",
         maxHeight: "200px",
+        borderRadius: "10px",
+        cursor: "pointer",
     };
 
     const getPeriod = (timeRange) => {
@@ -61,7 +61,9 @@ function TopType({ timeRange, type, token }) {
             <div style={gridStyle}>
                 {tracks.map((track) => (
                     <div key={track.id} style={trackStyle}>
-                        <img src={track.images[0].url} alt={track.name} style={imageStyle} />
+                        <a href={track.external_urls.spotify} target="_blank" rel="noreferrer">
+                            <img src={track.images[0].url} alt={track.name} style={imageStyle} />
+                        </a>
                         <div className="track-name">{track.name}</div>
                     </div>
                 ))}
@@ -72,7 +74,9 @@ function TopType({ timeRange, type, token }) {
             <div style={gridStyle}>
                 {tracks.map((track) => (
                     <div key={track.id} style={trackStyle}>
-                        <img src={track.album.images[0].url} alt={track.name} style={imageStyle} />
+                        <a href={track.external_urls.spotify} target="_blank" rel="noreferrer">
+                            <img src={track.album.images[0].url} alt={track.name} style={imageStyle} />
+                        </a>
                         <div className="track-name">{track.name}</div>
                     </div>
                 ))}

@@ -1,7 +1,7 @@
 import './App.css';
 import { useEffect, useState } from 'react';
 import axios from 'axios'
-import Profile from './profile'
+import Profile from './Profile'
 import TopType from './TopType'
 function App() {
 
@@ -49,8 +49,10 @@ function App() {
       <header className="App-header">
 
         {!token ?
-          <div className="login-button" onClick={() => window.location.href = `${AUTH_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&scope=${SCOPE}&response_type=${RESPONSE_TYPE}`}>
-            Login
+          <div className='login-container'>
+            <div className="login-button" onClick={() => window.location.href = `${AUTH_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&scope=${SCOPE}&response_type=${RESPONSE_TYPE}`}>
+              Login
+            </div>
           </div>
           : <div>
             <div className="profile"><Profile token={token} /> </div>
@@ -63,7 +65,7 @@ function App() {
               <div className='back-button' onClick={() => setActiveComponent(null)}>Back</div>
               :
               (
-                <div>
+                <div className='get-top'>
                   <div className="dropdowns">
                     <select
                       value={activeType}
@@ -81,7 +83,7 @@ function App() {
                       <option value="short_term">Last 3 Months</option>
                     </select>
                   </div>
-                  <div><div className="top-button" onClick={() => setActiveComponent(<TopType timeRange={activePeriod} type={activeType} token={token} />)}>Get</div></div>
+                  <div className="top-button" onClick={() => setActiveComponent(<TopType timeRange={activePeriod} type={activeType} token={token} />)}>Get</div>
                 </div>
               )
             }
@@ -89,7 +91,7 @@ function App() {
           : null
         }
 
-        {activeComponent}
+        <div className='component-flex'>{activeComponent} </div>
       </header>
     </div>
   );
