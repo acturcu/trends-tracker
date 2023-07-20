@@ -45,7 +45,7 @@
 }
 
 .logout-button {
-  position: absolute;
+  position: fixed;
   top: 4%;
   right: 5%;
   background-color: #1DB954;
@@ -88,18 +88,18 @@
 }
 
 .profile {
-  position: absolute;
+  position: fixed;
   top:4%;
   left: 5%;
 }
 
 .back-button {
   cursor: pointer;
-  position: absolute;
+  position: fixed;
   justify-content: center;
   align-items: center;
   bottom: 3%;
-  left : 10%;
+  left : 5%;
   background-color: #1DB954;
   color: #fff;
   width: 200px;
