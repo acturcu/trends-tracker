@@ -1,7 +1,7 @@
 import './App.css';
 import { useEffect, useState } from 'react';
 import axios from 'axios'
-import Profile from './Profile'
+import Profile from './profile'
 import TopType from './TopType'
 function App() {
 
