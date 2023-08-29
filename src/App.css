@@ -121,6 +121,12 @@
   margin-top: calc(20vh - 50px);
 }
 
+@media (max-width: 900px) {
+  .login-container {
+    margin-top: calc(10vh - 50px);
+  }
+}
+
 .login-button {
   /* position: absolute; */
   align-items: center;
@@ -138,6 +144,15 @@
   /* margin: 4px 2px; */
   border-radius: 20px;
   cursor: pointer;
+}
+
+@media (max-width: 900px) {
+  .login-button {
+    font-size: 30px;
+    padding: 10px 20px;
+    margin: 4px 2px;
+    resize: both;
+  }
 }
 
 .profile {
@@ -245,11 +260,26 @@
   margin-top: calc(20vh - 50px);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+.logo {
+  margin-top: 20%;
+  /* a  nimation: logo 20s linear infinite; */
+  height: 12vmin;
+}
+
+@media (max-width: 900px) {
+  .logo {
+    height: 8vmin;
   }
 }
+
+/* @keyframes logo {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(15deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+} */

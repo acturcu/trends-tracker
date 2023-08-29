@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import axios from 'axios'
 import Profile from './profile'
 import TopType from './TopType'
+import logo from './assets/spotify.png'
 function App() {
 
   const CLIENT_ID = "33285a8d70574a9d8fc4bf12e8f209eb"
@@ -53,6 +54,9 @@ function App() {
             <div className="login-button" onClick={() => window.location.href = `${AUTH_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&scope=${SCOPE}&response_type=${RESPONSE_TYPE}`}>
               Login
             </div>
+            <div className="logo-container">
+          <img src={logo} alt="Spotify logo" className="logo" />
+      </div>
           </div>
           : <div>
             <div className="profile"><Profile token={token} /> </div>
