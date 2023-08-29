@@ -1,6 +1,8 @@
 .App {
   text-align: center;
   background-color: #282c34;
+  resize: both;
+  overflow: auto;
 }
 
 .App-logo {
@@ -33,6 +35,36 @@
   /* margin-left: 20px; */
 }
 
+@media (max-width: 768px) {
+  .component-flex {
+    font-size: 14px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .component-flex {
+    font-size: 16px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .component-flex {
+    font-size: 18px;
+  }
+  
+  .App {
+    padding: 20px;
+  }
+  
+  .App-logo {
+    height: 20vmin;
+  }
+  
+  .component-flex button {
+    margin-top: 20px;
+  }
+}
+
 .App-link {
   color: #61dafb;
 }
@@ -41,11 +73,20 @@
   color: #1DB954;
   top:0;
   font-weight: bold;
-  font-size: 66px;
+  /* font-size: 66px; */
+  resize: both;
+  height: 10vh;
+  font-size: calc(50px + 2vmin);
+}
+
+@media (max-width: 900px) {
+  .title {
+    font-size: 30px;
+  }
 }
 
 .logout-button {
-  position: fixed;
+  position: absolute;
   top: 4%;
   right: 5%;
   background-color: #1DB954;
@@ -58,6 +99,18 @@
   font-weight: bold;
   margin: 4px 2px;
   cursor: pointer;
+  align-items: center;
+}
+
+@media (max-width: 900px) {
+  .logout-button {
+    top: 4%;
+    right: 5%;
+    font-size: 16px;
+    padding: 10px 20px;
+    margin: 4px 2px;
+    resize: both;
+  }
 }
 
 .login-container {
@@ -88,7 +141,7 @@
 }
 
 .profile {
-  position: fixed;
+  position: absolute;
   top:4%;
   left: 5%;
 }

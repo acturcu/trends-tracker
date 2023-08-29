@@ -6,3 +6,12 @@
 .prof-name {
     font-size: 10px;
 }
+
+@media (max-width : 900px) {
+    .prof-image {
+        max-width: 50px;
+    }
+    .prof-name {
+        font-size: 8px;
+    }
+}

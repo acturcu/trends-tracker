@@ -38,10 +38,11 @@ function TopType({ timeRange, type, token }) {
     };
 
     const imageStyle = {
-        maxWidth: "200px",
+        maxWidth: "100%",
         maxHeight: "200px",
         borderRadius: "10px",
         cursor: "pointer",
+        minWidth: "50px",
     };
 
     const getPeriod = (timeRange) => {
